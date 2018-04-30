@@ -1,0 +1,14 @@
+---
+# Metadata file for Docker-CE installation
+galaxy_info:
+  author: Ona Engineering
+  description: This role is used to install and configure Docker Communty Edition
+  min_ansible_version: 2.1
+  license: Apache 2
+  platforms:
+    - name: Ubuntu
+      verions:
+      - xenial
+  categories:
+    - docker
+    - docker-ce

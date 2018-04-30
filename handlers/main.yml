@@ -1,0 +1,7 @@
+---
+# Handlers file for Docker-CE installation
+
+- name: Start docker-ce service
+  service:
+    name: docker
+    state: started
