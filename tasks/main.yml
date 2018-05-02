@@ -52,7 +52,7 @@
 
 - name: Download Docker Compose
   get_url:
-    url: "https://github.com/docker/compose/releases/download/{{github_response.tag_name}}/docker-compose-{{ansible_system}}-{{ansible_architecture}}"
+    url: "https://github.com/docker/compose/releases/download/{{github_response.json.tag_name}}/docker-compose-{{ansible_system}}-{{ansible_architecture}}"
     dest: "/usr/local/bin/docker-compose"
     force: false
     mode: '555'
