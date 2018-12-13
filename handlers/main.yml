@@ -1,7 +1,7 @@
 ---
 # Handlers file for Docker-CE installation
 
-- name: Start docker-ce service
+- name: restart docker
   service:
     name: docker
-    state: started
+    state: restarted

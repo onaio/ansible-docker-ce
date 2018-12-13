@@ -12,3 +12,4 @@ galaxy_info:
   categories:
     - docker
     - docker-ce
+    - docker-compose
