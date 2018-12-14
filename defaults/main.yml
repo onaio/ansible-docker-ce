@@ -3,3 +3,4 @@
 docker_version: "18.06.1*"
 docker_compose_version: "1.23.2"
 docker_install_docker_compose: True
+docker_users: []

@@ -1,3 +1,5 @@
 ---
 # Tasks file for Docker-CE installation
+
 - include_tasks: install.yml
+- include_tasks: configure.yml
