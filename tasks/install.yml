@@ -7,6 +7,9 @@
       - docker.io
       - containerd
       - runc
+      - docker-doc
+      - docker-compose
+      - podman-docker
     state: absent
     update_cache: yes
     cache_valid_time: 600
