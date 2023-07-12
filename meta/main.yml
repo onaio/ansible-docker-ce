@@ -9,3 +9,9 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - jammy
+  galaxy_tags:
+    - docker
+    - docker compose
+    - docker-compose
+    - docker-ce
+    - docker-ce-cli
