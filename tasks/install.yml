@@ -1,25 +1,27 @@
 ---
 - name: Uninstall previous versions
   apt:
-    pkg: "{{item}}"
+    pkg:
+      - docker
+      - docker-engine
+      - docker.io
+      - containerd
+      - runc
+      - docker-doc
+      - docker-compose
+      - podman-docker
     state: absent
     update_cache: yes
     cache_valid_time: 600
-  with_items:
-    - docker
-    - docker-engine
-    - docker.io
 
 - name: Install repository packages
   apt:
-    pkg: "{{item}}"
+    pkg:
+      - ca-certificates
+      - curl
+      - gnupg
     state: latest
     update_cache: yes
-  with_items:
-    - apt-transport-https
-    - ca-certificates
-    - curl
-    - software-properties-common
 
 - name: Add docker's official GPG key
   apt_key:
@@ -32,9 +34,14 @@
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ansible_distribution_release}} stable"
     state: present
 
-- name: Install docker-ce
+- name: Install Docker Engine, containerd, and Docker Compose
   apt:
-    name: "docker-ce={{ docker_version }}"
+    pkg:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
     state: "present"
     update_cache: yes
   notify:
@@ -51,5 +58,5 @@
     url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ ansible_system }}-{{ ansible_architecture }}"
     dest: "/usr/local/bin/docker-compose"
     force: false
-    mode: '0555'
+    mode: "0555"
   when: docker_install_docker_compose
