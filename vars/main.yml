@@ -1,3 +1,11 @@
 ---
 # Vars file for Docker-CE installation
 docker_group: docker
+deb_architecture:
+  {
+    "x86_64": "amd64",
+    "aarch64": "arm64",
+    "armv6l": "armhf",
+    "armv7l": "armhf",
+    "i386": "i386",
+  }
